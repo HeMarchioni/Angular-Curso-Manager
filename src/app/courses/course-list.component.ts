@@ -15,17 +15,17 @@ export class CourseListComponent implements OnInit{  // OnInit componente ira ap
       {
         id: 1,
         name: "Angular: Forms",
-        imgUrl: "",
+        imgUrl: "/assets/images/forms.png",
         price: 99.99,
         code: "XPS-8796",
         duration: 120,
-        rating: 5.4,
+        rating: 4.5,
         releaseDate: 'Novembro, 4 , 2019'
       },
       {
         id: 2,
         name: "Angular: HTTP",
-        imgUrl: "",
+        imgUrl: "/assets/images/http.png",
         price: 45.99,
         code: "LKL-8796",
         duration: 80,
