@@ -7,7 +7,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": false,
+    "noFallthroughCasesInSwitch": true, // -> desativar a obrigação de inicializar Variáveis e colocar construtores
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
