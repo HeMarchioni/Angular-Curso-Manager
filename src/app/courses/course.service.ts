@@ -19,6 +19,13 @@ export class CourseService {
   }
 
 
+  save(course: Course): void {
+    if(course.id) {
+      const index = COURSES.findIndex((courseIterador:Course) => courseIterador.id === course.id);
+    }
+  }
+
+
 }
 
 let COURSES: Course[] = [
