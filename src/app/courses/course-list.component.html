@@ -34,7 +34,9 @@
         <app-star [rating]="course.rating"></app-star>
 
       </td>
-      <td> </td>
+      <td>
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>   <!–  rota (vai passar uma variável da Url course.id)->
+      </td>
 
     </tr>
 
