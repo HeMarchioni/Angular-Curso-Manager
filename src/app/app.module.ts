@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
@@ -24,6 +25,7 @@ import {CourseInfoComponent} from "./courses/course-info.component";
   imports: [
     BrowserModule,
     FormsModule,
+      HttpClientModule,
     RouterModule.forRoot([    //-> modulo de rotas (forRoot recebe um array de rotas)
       {
         path: 'courses',component: CourseListComponent

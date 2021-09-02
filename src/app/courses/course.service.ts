@@ -21,19 +21,23 @@ export class CourseService {
   }
 
 
-  retrieveById(id:number):Course | undefined {
-    return COURSES.find((courseIterador:Course)=> courseIterador.id === id);
+  retrieveById(id:number): Observable<Course> {
+    return this.httpClient.get<Course>(this.courseUrl+`/${id}`);
   }
 
 
-  save(course: Course): void {
-    if(course.id) {
-      const index = COURSES.findIndex((courseIterador:Course) => courseIterador.id === course.id);
+  save(course: Course): Observable<Course> {
+    if (course.id) {
+      return this.httpClient.put<Course>(this.courseUrl + `/${course.id}`, course);
+    } else {
+      return this.httpClient.post<Course>(this.courseUrl, course);
     }
   }
 
 
 }
+
+
 
 let COURSES: Course[] = [
   {
@@ -45,7 +49,7 @@ let COURSES: Course[] = [
     code: 'XLF-1212',
     rating: 3,
     price: 12.99,
-    imgUrl: '/assets/images/cli.png',
+    imageUrl: '/assets/images/cli.png',
   },
   {
     id: 2,
@@ -56,7 +60,7 @@ let COURSES: Course[] = [
     code: 'DWQ-3412',
     rating: 3.5,
     price: 24.99,
-    imgUrl: '/assets/images/forms.png',
+    imageUrl: '/assets/images/forms.png',
   },
   {
     id: 3,
@@ -67,7 +71,7 @@ let COURSES: Course[] = [
     code: 'QPL-0913',
     rating: 4.0,
     price: 36.99,
-    imgUrl: '/assets/images/http.png',
+    imageUrl: '/assets/images/http.png',
   },
   {
     id: 4,
@@ -78,7 +82,7 @@ let COURSES: Course[] = [
     code: 'OHP-1095',
     rating: 4.5,
     price: 46.99,
-    imgUrl: '/assets/images/router.png',
+    imageUrl: '/assets/images/router.png',
   },
   {
     id: 5,
@@ -89,6 +93,6 @@ let COURSES: Course[] = [
     code: 'PWY-9381',
     rating: 5,
     price: 56.99,
-    imgUrl: '/assets/images/animations.png',
+    imageUrl: '/assets/images/animations.png',
   }
 ];

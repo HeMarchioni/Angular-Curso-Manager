@@ -19,6 +19,7 @@ export class CourseListComponent implements OnInit{  // OnInit componente ira ap
 
   ngOnInit(): void {        // Função a ser realizada na hora que é carregado OnInit
     this.retrieveAll();
+
   }
 
 

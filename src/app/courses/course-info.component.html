@@ -2,7 +2,7 @@
 <h2> Course Info</h2>
 <hr>
 
-<form #courseForm="ngForm">  <!-- ngForm pega todos os atributos do formulário e passa para #courseForm -->
+<form #courseForm="ngForm" *ngIf="course">  <!-- ngForm pega todos os atributos do formulário e passa para #courseForm -->
 
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Name:</label>
@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <button [disabled]="courseForm.invalid" class="btn btn-primary mr-2">Save</button>
+  <button [disabled]="courseForm.invalid" (click)="save()" class="btn btn-primary mr-2">Save</button>
   <button [routerLink]="['/courses']" class="btn btn-secondary">Back</button>
 
 </form>
