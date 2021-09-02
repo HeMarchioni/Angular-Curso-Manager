@@ -1,5 +1,7 @@
 import {Course} from "./course";
 import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({                   // -> injetando courseService na raiz para ser chamado onde quiser (é uma classe final (unica)
   providedIn: 'root'
@@ -9,8 +11,13 @@ import {Injectable} from "@angular/core";
 
 export class CourseService {
 
-  retrieveAll(): Course[] {
-    return COURSES;
+
+  private courseUrl: string = 'http://localhost:3100/api/courses';
+
+  constructor(private  httpClient: HttpClient) { }
+
+  retrieveAll(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.courseUrl);
   }
 
 
