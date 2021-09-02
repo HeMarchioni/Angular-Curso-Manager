@@ -37,6 +37,16 @@ export class CourseListComponent implements OnInit{  // OnInit componente ira ap
   }
 
 
+  deleteById(courseId: number) {
+    this.courseService.deleteById(courseId).subscribe({
+      next:()=>{
+        console.log('Delete Eith sucess');
+        this.retrieveAll();   // -> atualiza a lista depois do delete
+      },
+      error: err => console.log('Error',err)
+    })
+  }
+
 
   get filter(): String {
     return this._filterBy;

@@ -35,7 +35,8 @@
 
       </td>
       <td>
-        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>   <!–  rota (vai passar uma variável da Url course.id)->
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-2">Edit</a>   <!–  rota (vai passar uma variável da Url course.id)->
+        <button (click)="deleteById(course.id)" class="btn btn-danger">Delete</button>
       </td>
 
     </tr>
