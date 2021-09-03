@@ -3,23 +3,23 @@ import {CourseListComponent} from "./course-list.component";
 import {RouterModule} from "@angular/router";
 import {CourseInfoComponent} from "./course-info.component";
 import {FormsModule} from "@angular/forms";
-import {ReplacePipe} from "../pipe/replace.pipe";
 import {CommonModule} from "@angular/common";
-import {StarComponent} from "../star/star.component";
+import {StarModule} from "../shared/component/star/star.module";
+import {AppPipeModule} from "../shared/pipe/app-pipe-module";
+
 
 
 @NgModule({
     declarations: [
         CourseListComponent,
         CourseInfoComponent,
-        ReplacePipe,
-        StarComponent
-
 
     ], imports: [
         CommonModule,    // -> modulo nativo do angular
         FormsModule,
-        RouterModule.forChild([
+        StarModule,     // -> importanto outro modulo
+        AppPipeModule,
+        RouterModule.forChild([             // -> forChild pq é um filho app.module
             {
                 path: 'courses',component: CourseListComponent
             },
