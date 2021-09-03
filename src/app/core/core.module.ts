@@ -12,13 +12,11 @@ import {Error404Component} from "./component/error404/error-404.component";
     ],
     imports:[
         RouterModule.forChild([
-            {
-                path: '**', component: Error404Component     // -> se Url for uma rota que nao existe chama o componente Erro404
-            }
+
         ])
     ],
     exports: [
-        NavBarComponent
+        NavBarComponent,
     ]
 
 })
